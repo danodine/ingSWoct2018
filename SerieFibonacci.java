@@ -5,6 +5,8 @@
  */
 package seriefibonacci;
  import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 /**
  *
  * @author danodine
@@ -15,8 +17,10 @@ public class SerieFibonacci {
      * @param args the command line arguments
      */
     
-    public static void main(String[] args) {
+    public static void main(String[] args)throws FileNotFoundException {
     
+          PrintStream Fib = new PrintStream("Fibonacci.txt");
+          
         System.out.println ("Cálculo de Serie Fibonacci");
         System.out.print ("Introduzca valor de n para serie numérica: ");
         int datoN = 0;
@@ -27,7 +31,10 @@ public class SerieFibonacci {
         serieFibonacci = f.hallarSerieFibonacci(datoN);
         for (int i=0; i<serieFibonacci.length; i++) {
             System.out.print (serieFibonacci[i]+" - ");
+            
+             Fib.print(serieFibonacci[i]+" - "); 
         }
+      
     }
 }
     
